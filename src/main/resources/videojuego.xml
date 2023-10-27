@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Videojuego Identificador="12AB3">
+    <Titulo>Hollow Knight</Titulo>
+    <Genero>Metroidvania</Genero>
+    <Desarrolladora>Team Cherry</Desarrolladora>
+    <PEGI>E</PEGI>
+    <Plataformas>All</Plataformas>
+    <Precio>15.50€</Precio>
+</Videojuego>
