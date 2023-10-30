@@ -1,0 +1,6 @@
+{"Videojuegos": [
+    "{\n    \"pegi\": \"E\",\n    \"price\": \"15.50\\u20ac\",\n    \"genre\": \"Metroidvania\",\n    \"developer\": \"Team Cherry\",\n    \"id\": \"12AB3\",\n    \"title\": \"Hollow Knight\"\n}",
+    "{\n    \"pegi\": \"16\",\n    \"price\": \"59.99\\u20ac\",\n    \"genre\": \"Soulslike\",\n    \"developer\": \"From Software\",\n    \"id\": \"43C3Q\",\n    \"title\": \"Elden Ring\"\n}",
+    "{\n    \"pegi\": \"16\",\n    \"price\": \"59.99\\u20ac\",\n    \"genre\": \"Soulslike\",\n    \"developer\": \"From Software\",\n    \"id\": \"43C3Q\",\n    \"title\": \"Elden Ring\"\n}",
+    "{\n    \"pegi\": \"4\",\n    \"price\": \"4\",\n    \"genre\": \"sfsef\",\n    \"developer\": \"sefsef\",\n    \"id\": \"sdfsdf\",\n    \"title\": \"sfsf\"\n}"
+]}

@@ -1,19 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <VideoJuegos>
     <VideoJuego Identificador="12AB3">
-        <Titulo>Hollow Knight</Titulo>
-        <Genero>Metroidvania</Genero>
         <Desarrolladora>Team Cherry</Desarrolladora>
+        <Genero>Metroidvania</Genero>
         <PEGI>E</PEGI>
-        <Plataforma>All</Plataforma>
         <Precio>15.50€</Precio>
+        <Titulo>Hollow Knight</Titulo>
     </VideoJuego>
     <VideoJuego Identificador="43C3Q">
-        <Titulo>Elden Ring</Titulo>
-        <Genero>Soulslike</Genero>
         <Desarrolladora>From Software</Desarrolladora>
+        <Genero>Soulslike</Genero>
         <PEGI>16</PEGI>
-        <Plataforma>All</Plataforma>
         <Precio>59.99€</Precio>
+        <Titulo>Elden Ring</Titulo>
+    </VideoJuego>
+    <VideoJuego Identificador="43C3Q">
+        <Desarrolladora>From Software</Desarrolladora>
+        <Genero>Soulslike</Genero>
+        <PEGI>16</PEGI>
+        <Precio>59.99€</Precio>
+        <Titulo>Elden Ring</Titulo>
+    </VideoJuego>
+    <VideoJuego Identificador="sdfsdf">
+        <Desarrolladora>sefsef</Desarrolladora>
+        <Genero>sfsef</Genero>
+        <PEGI>4</PEGI>
+        <Precio>4</Precio>
+        <Titulo>sfsf</Titulo>
     </VideoJuego>
 </VideoJuegos>

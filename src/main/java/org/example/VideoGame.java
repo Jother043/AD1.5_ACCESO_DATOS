@@ -1,25 +1,36 @@
 package org.example;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+import javax.xml.bind.Unmarshaller;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Objects;
 
-@XmlRootElement(name = "VideoJuegos")
+@XmlRootElement(name = "VideoJuego")
 public class VideoGame {
     // Los campos de la clase VideoGame deben estar anotados como elementos XML.
-    @XmlAttribute(name = "Identificador")
+
     private String id;
-    @XmlElement(name = "Titulo")
+
     private String title;
-    @XmlElement(name = "Genero")
+
     private String genre;
-    @XmlElement(name = "Desarrolladora")
+
     private String developer;
-    @XmlElement(name = "PEGI")
+
     private String pegi;
-    @XmlElement(name = "Plataforma")
+
     private String platform;
-    @XmlElement(name = "Precio")
+
     private String price;
 
     public VideoGame() {
@@ -35,37 +46,114 @@ public class VideoGame {
         this.price = price;
     }
 
+    @XmlAttribute(name = "Identificador")
     public String getId() {
         return id;
     }
 
+    @XmlElement(name = "Titulo")
     public String getTitle() {
         return title;
     }
 
+    @XmlElement(name = "Genero")
     public String getGenre() {
         return genre;
     }
 
+    @XmlElement(name = "Desarrolladora")
     public String getDeveloper() {
         return developer;
     }
 
+    @XmlElement(name = "PEGI")
     public String getPegi() {
         return pegi;
     }
 
+    @XmlElement(name = "Plataformas")
     public String getPlatform() {
         return platform;
     }
 
+    @XmlElement(name = "Precio")
     public String getPrice() {
         return price;
     }
 
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+
+    public void setDeveloper(String developer) {
+        this.developer = developer;
+    }
+
+    public void setPegi(String pegi) {
+        this.pegi = pegi;
+    }
+
+    public void setPlatform(String platform) {
+        this.platform = platform;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
+    }
 
     @Override
     public String toString() {
         return "VideoGame{" + "title=" + title + ", genre=" + genre + ", developer=" + developer + ", pegi=" + pegi + ", platform=" + platform + ", price=" + price + '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        VideoGame videoGame = (VideoGame) o;
+        return Objects.equals(id, videoGame.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
+
+    public void saveInXML(String s) {
+        try {
+            JAXBContext context = JAXBContext.newInstance(this.getClass());
+            Marshaller marshaller = context.createMarshaller();
+            marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+            marshaller.marshal(this, new File(s));
+        } catch (JAXBException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void convertXMLtoJSON(String s, String s1) {
+        try {
+            JAXBContext context = JAXBContext.newInstance(this.getClass());
+            Unmarshaller unmarshaller = context.createUnmarshaller();
+            VideoGame videojuego = (VideoGame) unmarshaller.unmarshal(new File(s));
+            JSONObject jsonObject = new JSONObject();
+            JSONArray jsonArray = new JSONArray();
+            JSONObject jsonObject1 = new JSONObject(videojuego);
+            jsonArray.put(jsonObject1);
+            jsonObject.put("Videojuegos", jsonArray);
+            FileWriter fileWriter = new FileWriter(s1);
+            fileWriter.write(jsonObject.toString());
+            fileWriter.flush();
+            fileWriter.close();
+        } catch (JAXBException | IOException e) {
+            e.printStackTrace();
+        }
     }
 }
